@@ -1,0 +1,6 @@
+[
+  { "id": 1, "color": "#0047FF", "short-name": "CN", "name": "Cuvette notes" },
+  { "id": 2, "color": "#B38BFA", "short-name": "JS", "name": "JS notes" },
+  { "id": 3, "color": "#43E6FC", "short-name": "NJ", "name": "NodeJs notes" },
+  { "id": 4, "color": "#6691FF", "short-name": "CS", "name": "Css notes" }
+]

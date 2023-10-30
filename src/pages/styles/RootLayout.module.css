@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  border: 2px solid gray;
+  display: none;
+}
+
+.showNotes {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    display: block;
+  }
+}
+
+/* @media screen and (min-width: 1280px) {
+  .main {
+  }
+} */

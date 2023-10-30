@@ -1,0 +1,39 @@
+.container {
+  background-color: var(--base-color);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.heading {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--neutral-color);
+}
+
+.navigateIcon {
+  display: flex;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.navigateIcon:hover {
+  background-color: var(--neutral-content);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.textBox {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--neutral-color);
+  padding: 1rem;
+  width: 100%;
+}
