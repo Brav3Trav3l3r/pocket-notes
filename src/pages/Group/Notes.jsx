@@ -1,16 +1,19 @@
 import styles from "./styles/Notes.module.css";
-import notes from "../../data/notes.json";
 import { Text } from "../../components/ui";
 
-export default function Notes() {
+export default function Notes({ group }) {
   return (
     <div className={styles.notes}>
-      {notes.map((n) => (
-        <div key={n.id} className={styles.note}>
-          <Text>{n.createdAt}</Text>
-          <Text>{n.note}</Text>
-        </div>
-      ))}
+      {group.notes &&
+        group.notes?.map((n) => (
+          <div key={n.createdAt} className={styles.note}>
+            <div className="">
+              <Text weight="500">{n.createdAt.time}</Text>
+              <Text weight="500">{n.createdAt.date}</Text>
+            </div>
+            <Text>{n.text}</Text>
+          </div>
+        ))}
     </div>
   );
 }

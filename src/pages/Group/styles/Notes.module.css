@@ -1,9 +1,8 @@
 .notes {
   flex: 1;
-  min-height: 300px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   overflow: hidden;
   overflow-y: auto;
   padding: 1rem;
@@ -17,6 +16,10 @@
 /* ---MEDIA QUERIES--- */
 
 @media screen and (min-width: 1280px) {
+  .notes {
+    padding: 1rem 2rem;
+  }
+
   .note {
     gap: 3rem;
   }

@@ -1,10 +1,11 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import ModalContent from "./ModalContent";
 import NotesGroup from "./NotesGroup";
 import styles from "./styles/Navigation.module.css";
-import { Avatar, Button, Text } from "./ui";
-import { useState } from "react";
+import { Button, Text } from "./ui";
 import Modal from "./ui/Modal";
-import { createPortal } from "react-dom";
 
 export default function Navigation({ isHomePage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,7 +14,7 @@ export default function Navigation({ isHomePage }) {
     setIsModalOpen((prev) => !prev);
   };
 
-  let navDisplay = !isHomePage ? styles.close : "";
+  let navDisplay = !isHomePage ? styles.onClose : "";
 
   return (
     <>
@@ -31,44 +32,10 @@ export default function Navigation({ isHomePage }) {
       {isModalOpen &&
         createPortal(
           <Modal onClick={handleModalOpen}>
-            <ModalContent />
+            <ModalContent handleModalOpen={handleModalOpen} />
           </Modal>,
           document.getElementById("modal")
         )}
     </>
   );
 }
-
-const ModalContent = () => {
-  return (
-    <div className={styles.main}>
-      <Text step={6} weight="500">
-        Create new notes group
-      </Text>
-      <div className={styles.inputGroup}>
-        <label htmlFor="group">
-          <Text step={4} weight="500">Group name</Text>
-        </label>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="Enter your group name"
-        />
-      </div>
-      <div className={styles.colorGroup}>
-        <Text step={4} weight="500">Choose color</Text>
-        <div className={styles.colors}>
-          <Avatar color="#B38BFA" />
-          <Avatar color="#FF79F2" />
-          <Avatar color="#43E6FC" />
-          <Avatar color="#F19576" />
-          <Avatar color="#0047FF" />
-          <Avatar color="#6691FF" />
-        </div>
-      </div>
-      <div className={styles.createButton}>
-        <Button>Create</Button>
-      </div>
-    </div>
-  );
-};

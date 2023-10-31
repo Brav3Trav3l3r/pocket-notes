@@ -1,6 +1,9 @@
 .ul {
   padding: unset;
   margin-right: -1rem;
+  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .li {

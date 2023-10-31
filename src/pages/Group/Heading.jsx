@@ -3,16 +3,17 @@ import styles from "./styles/Heading.module.css";
 import { Icon } from "@iconify/react";
 import { Avatar, Text } from "../../components/ui";
 
-export default function Heading() {
+export default function Heading({ group }) {
+  console.log(group);
   return (
     <div className={styles.heading}>
       <Link to=".." className={styles.navigateIcon}>
         <Icon icon="lucide:arrow-left" />
       </Link>
       <div className={styles.title}>
-        <Avatar color="#0047FF">CV</Avatar>
-        <Text step={4} weight="500">
-          Cuvette notes
+        <Avatar color={group.color}>{group.name.slice(0, 2).toUpperCase()}</Avatar>
+        <Text step={5} weight="500">
+          {group.name}
         </Text>
       </div>
     </div>

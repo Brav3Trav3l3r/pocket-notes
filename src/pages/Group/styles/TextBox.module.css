@@ -1,7 +1,7 @@
 .textBox {
   background-color: var(--neutral-color);
   padding: 1rem;
-  height: 200px;
+  height: 20vh;
 }
 
 .form {
@@ -23,8 +23,15 @@
   line-height: 1rem;
   margin-left: auto;
   transform: all 0.5s ease-in-out;
+  color: var(--neutral-content);
 }
 
 .sendIcon:hover {
-  opacity: 0.8;
+  color: rgb(28, 124, 249);
+}
+
+@media screen and (min-width: 768px) {
+  .textBox {
+    height: 30vh;
+  }
 }

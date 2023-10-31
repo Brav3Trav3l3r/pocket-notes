@@ -1,5 +1,5 @@
 .heading {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -15,11 +15,17 @@
 }
 
 .navigateIcon:hover {
-  background-color: var(--neutral-content);
+  color: rgb(28, 124, 249);
 }
 
 .title {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navigateIcon {
+    display: none;
+  }
 }

@@ -1,60 +1,14 @@
 .nav {
   min-width: 100%;
-  padding: 1rem;
+  height: 100vh;
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.close {
+.onClose {
   display: none;
-}
-
-.nav > * {
-  margin-bottom: 1rem;
-}
-
-.title {
-  margin-bottom: 2rem;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.input {
-  width: 100%;
-  height: 48px;
-  border-radius: 56px;
-  padding-left: 24px;
-  font-size: 1rem;
-  font-weight: normal;
-  border: 1px solid rgb(137, 151, 155);
-  transition: border-color 150ms ease-in-out 0s;
-  outline: none;
-  color: rgb(33, 49, 60);
-  background-color: rgb(255, 255, 255);
-  padding-right: 12px;
-}
-
-.input:hover {
-  box-shadow: rgb(231 238 236) 0px 0px 0px 3px;
-}
-
-.colorGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.colors {
-  display: flex;
-  gap: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -62,28 +16,8 @@
     min-width: 35%;
   }
 
-  .close {
-    display: block;
-  }
-
-  .inputGroup {
+  .onClose {
     display: flex;
-    align-items: baseline;
-    flex-direction: row;
-    text-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  .colorGroup {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .createButton {
-    max-width: fit-content;
-    margin-left: auto;
   }
 }
 

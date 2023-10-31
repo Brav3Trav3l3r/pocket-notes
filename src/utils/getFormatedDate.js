@@ -1,5 +1,6 @@
-export default function convertUnixTimestamp(unixTimestamp) {
-  const date = new Date(unixTimestamp * 1000);
+export default function getFormatedDate() {
+  const unixTimestamp = Date.now();
+  const date = new Date(unixTimestamp);
 
   const options = {
     day: "numeric",

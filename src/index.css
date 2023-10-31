@@ -51,7 +51,7 @@ a {
   color: var(--primary-color);
 }
 
-textarea {
+textarea, input {
   font-family: inherit;
   border: none;
   overflow: auto;

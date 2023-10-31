@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./pages/RootLayout";
 import HomePage from "./pages/Home/index.element";
 import Groups from "./pages/Group/index.element";
+import { NotesContextProvider } from "./store/notesContext";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>
+      <NotesContextProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </NotesContextProvider>
     </>
   );
 }
