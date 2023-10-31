@@ -1,6 +1,10 @@
 /* These properties and values are based on the Radix typography
  guidelines.: https://www.radix-ui.com/themes/docs/theme/typography */
 
+.text {
+  max-width: 65ch;
+}
+
 .stepOne {
   font-size: 12px;
   letter-spacing: 0.0025em;

@@ -1,5 +1,6 @@
-import Text from "./Text";
-import Button from "./Button";
 import Avatar from "./Avatar";
+import Button from "./Button";
+import Text from "./Text";
+import Modal from "./Modal";
 
-export { Text, Button, Avatar };
+export { Avatar, Button, Text, Modal };

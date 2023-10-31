@@ -46,7 +46,7 @@ export default function Text({
         color: color,
         ...inLineStyles,
       }}
-      className={stepStyle}
+      className={`${stepStyle} ${styles.text}`}
     >
       {children}
     </p>

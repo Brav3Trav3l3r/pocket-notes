@@ -1,0 +1,30 @@
+.textBox {
+  background-color: var(--neutral-color);
+  padding: 1rem;
+  height: 200px;
+}
+
+.form {
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+  height: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  flex: 1;
+}
+
+.sendIcon {
+  margin-top: 0.5rem;
+  display: block;
+  line-height: 1rem;
+  margin-left: auto;
+  transform: all 0.5s ease-in-out;
+}
+
+.sendIcon:hover {
+  opacity: 0.8;
+}
