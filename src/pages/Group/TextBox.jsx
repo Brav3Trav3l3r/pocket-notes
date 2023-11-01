@@ -34,6 +34,7 @@ export default function TextBox() {
       <div className={styles.wrapper}>
         <form onSubmit={handleNoteSubmit} className={styles.form}>
           <textarea
+            autoFocus
             onKeyDown={handleKeyDown}
             value={input}
             onChange={(e) => setInput(e.target.value)}
