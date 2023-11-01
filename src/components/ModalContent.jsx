@@ -33,6 +33,7 @@ export default function ModalContent({ handleModalOpen }) {
     <form onSubmit={handleSubmit} className={styles.form}>
       <Text step={6} weight="500">
         Create new notes group
+        <span className={styles.kbdEsc}>Esc</span>
       </Text>
       <div className={styles.inputGroup}>
         <label htmlFor="group">
@@ -41,6 +42,7 @@ export default function ModalContent({ handleModalOpen }) {
           </Text>
         </label>
         <input
+          autoFocus
           value={inputName}
           onChange={(e) => setInputName(e.target.value)}
           type="text"

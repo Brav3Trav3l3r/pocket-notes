@@ -13,12 +13,9 @@
   gap: 1.5rem;
 }
 
-.metadata {
-  text-wrap: nowrap;
-}
-
 .metadata span {
   display: block;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 1280px) {

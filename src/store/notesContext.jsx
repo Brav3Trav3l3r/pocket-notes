@@ -50,7 +50,7 @@ export const NotesContextProvider = ({ children }) => {
   const addGroup = useCallback(
     (name, color) => {
       setGroups((draft) => {
-        draft.push({
+        draft.unshift({
           id: Date.now().toString(36),
           name: name,
           color: color,

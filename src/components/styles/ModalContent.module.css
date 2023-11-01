@@ -4,6 +4,19 @@
   gap: 1.5rem;
 }
 
+.kbdEsc {
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1ch;
+  opacity: 0.7;
+  float: right;
+  padding: 0 0.5rem;
+  margin-left: 1rem;
+  border: 2px solid var(--secondary-border);
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
@@ -35,12 +48,19 @@
 
 .colors {
   display: flex;
-  gap: 0.325rem;
+  justify-content: space-between;
+  /* gap: 0.325rem; */
   composes: noSelect from global;
 }
 
+.radio {
+  position: relative;
+}
+
 .radio input {
-  display: none;
+  position: absolute;
+  top: 0px;
+  z-index: 0;
 }
 
 .radio span {
@@ -52,6 +72,8 @@
   border: 2px solid #ffffff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
   line-height: 44px;
+  position: relative;
+  z-index: 10;
 }
 
 .radio input:checked + label span {
@@ -64,13 +86,13 @@
     align-items: baseline;
     flex-direction: row;
     text-wrap: nowrap;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .radioGroup {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
   }
 

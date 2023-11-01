@@ -11,6 +11,25 @@
   display: none;
 }
 
+.buttonContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContent > div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.buttonContent span {
+  font-size: 0.9rem;
+  letter-spacing: 0.11ch;
+  opacity: 0.7;
+  font-family: monospace;
+}
+
 @media screen and (min-width: 768px) {
   .nav {
     min-width: 35%;
