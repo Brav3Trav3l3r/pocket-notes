@@ -1,14 +1,14 @@
-import { Icon } from "@iconify/react";
 import { useCallback, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NotesContext } from "../../store/notesContext";
+import { Icon } from "@iconify/react";
 import styles from "./styles/TextBox.module.css";
+
+import { NotesContext } from "../../store/notesContext";
 
 export default function TextBox() {
   const [input, setInput] = useState("");
   const params = useParams();
   const { id } = params;
-
   const noteCtx = useContext(NotesContext);
 
   const handleNoteSubmit = useCallback(

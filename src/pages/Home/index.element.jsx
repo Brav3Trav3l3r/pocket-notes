@@ -1,5 +1,6 @@
 import styles from "./styles/index.module.css";
 import heroImage from "../../assets/homeImage.png";
+
 import { Text } from "../../components/ui";
 import { Icon } from "@iconify/react";
 

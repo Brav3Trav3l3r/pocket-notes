@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./styles/Heading.module.css";
 import { Icon } from "@iconify/react";
+import styles from "./styles/Heading.module.css";
+
 import { Avatar, Text } from "../../components/ui";
 
 export default function Heading({ group }) {

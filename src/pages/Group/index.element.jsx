@@ -1,10 +1,11 @@
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import styles from "./styles/index.module.css";
+
 import Heading from "./Heading";
 import Notes from "./Notes";
 import TextBox from "./TextBox";
-import styles from "./styles/index.module.css";
-import { useContext } from "react";
 import { NotesContext } from "../../store/notesContext";
-import { useParams } from "react-router-dom";
 
 export default function Groups() {
   const noteCtx = useContext(NotesContext);

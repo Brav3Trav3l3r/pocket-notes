@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { NotesContext } from "../store/notesContext";
 import styles from "./styles/ModalContent.module.css";
+
+import { NotesContext } from "../store/notesContext";
 import { Button, Text } from "./ui";
 
 export default function ModalContent({ handleModalOpen }) {

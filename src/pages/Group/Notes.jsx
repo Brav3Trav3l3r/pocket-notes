@@ -1,4 +1,5 @@
 import styles from "./styles/Notes.module.css";
+
 import { Text } from "../../components/ui";
 
 export default function Notes({ group }) {

@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./styles/NoteGroups.module.css";
 
 import { Text, Avatar } from "./ui";
 import { NotesContext } from "../store/notesContext";
 
-export default function NoteGroups() {
+const NoteGroups = memo(function NoteGroups() {
   const notesCtx = useContext(NotesContext);
   const groups = notesCtx.getPartialGroups();
 
@@ -28,4 +28,6 @@ export default function NoteGroups() {
         ))}
     </ul>
   );
-}
+});
+
+export default NoteGroups;
