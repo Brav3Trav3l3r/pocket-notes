@@ -6,11 +6,10 @@
 
 .main {
   flex: 1;
-  display: none;
 }
 
-.showNotes {
-  display:block;
+.hideElem {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -18,4 +17,3 @@
     display: block;
   }
 }
-

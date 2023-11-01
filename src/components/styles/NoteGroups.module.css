@@ -6,16 +6,15 @@
   flex: 1;
 }
 
-.li {
+.ul li {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 2rem 0rem 0rem 2rem;
-  color: var(--primary-color);
 }
 
-.active {
-  background-color: var(--base-color);
+.isActive {
+  background-color: var(--primary);
 }

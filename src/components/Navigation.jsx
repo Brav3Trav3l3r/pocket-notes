@@ -1,34 +1,32 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
-import ModalContent from "./ModalContent";
-import NotesGroup from "./NotesGroup";
 import styles from "./styles/Navigation.module.css";
-import { Button, Text } from "./ui";
-import Modal from "./ui/Modal";
 
-export default function Navigation({ isHomePage }) {
+import ModalContent from "./ModalContent";
+import NoteGroups from "./NoteGroups";
+import { Modal, Button, Text } from "./ui";
+
+export default function Navigation({ isRootRoute }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
     setIsModalOpen((prev) => !prev);
   };
 
-  let navDisplay = !isHomePage ? styles.onClose : "";
+  let navDisplayStyles = !isRootRoute ? styles.hideElem : "";
 
   return (
     <>
-      <div className={`${styles.nav} ${navDisplay}`}>
-        <div className={styles.title}>
-          <Link to={"/"}>
-            <Text step={6} weight="600">
-              Pockety notes
-            </Text>
-          </Link>
-        </div>
+      <nav className={`${styles.nav} ${navDisplayStyles}`}>
+        <Link className={styles.title} to={"/"}>
+          <Text step={6} weight="600">
+            Pocket notes
+          </Text>
+        </Link>
         <Button onClick={handleModalOpen}>+ Create notes group</Button>
-        <NotesGroup />
-      </div>
+        <NoteGroups />
+      </nav>
       {isModalOpen &&
         createPortal(
           <Modal onClick={handleModalOpen}>

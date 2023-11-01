@@ -3,85 +3,86 @@ import { useImmer } from "use-immer";
 import getFormatedDate from "../utils/getFormatedDate";
 
 export const NotesContext = createContext({
-  notesGroups: [],
-  getGroups: () => {},
+  groups: [],
+  getPartialGroups: () => {},
   getGroup: () => {},
   addGroup: () => {},
   addNote: () => {},
 });
 
-const initState = () => {
-  const groups = localStorage.getItem("notesGroups");
-  if (groups) {
-    return JSON.parse(groups);
+const initGroupsState = () => {
+  const groups = localStorage.getItem("noteGroups");
+  if (!groups) {
+    return [];
   }
-  return [];
+  return JSON.parse(groups);
 };
 
 export const NotesContextProvider = ({ children }) => {
-  const [notesGroups, setNotesGroups] = useImmer(initState);
+  const [groups, setGroups] = useImmer(initGroupsState);
 
   useEffect(() => {
-    localStorage.setItem("notesGroups", JSON.stringify(notesGroups));
-  }, [notesGroups]);
+    localStorage.setItem("noteGroups", JSON.stringify(groups));
+  }, [groups]);
 
-  const getGroups = useCallback(() => {
-    const arrOfNames = notesGroups.map((n) => ({
-      name: n.name,
+  const getPartialGroups = useCallback(() => {
+    const arrOfGroups = groups.map((n) => ({
       id: n.id,
+      name: n.name,
       color: n.color,
-      shortname: n.name.slice(0, 2).toUpperCase(),
     }));
-    return arrOfNames;
-  }, [notesGroups]);
+    return arrOfGroups;
+  }, [groups]);
 
   const getGroup = useCallback(
     (id) => {
-      const group = notesGroups.find((g) => g.id === id);
+      const group = groups.find((g) => g.id === id);
+
       if (!group) {
         return;
       }
+
       return group;
     },
-    [notesGroups]
+    [groups]
   );
 
   const addGroup = useCallback(
     (name, color) => {
-      setNotesGroups((draft) => {
+      setGroups((draft) => {
         draft.push({
           id: Date.now().toString(36),
-          color: color,
           name: name,
+          color: color,
           notes: [],
         });
       });
     },
-    [setNotesGroups]
+    [setGroups]
   );
 
   const addNote = useCallback(
     (note, id) => {
-      setNotesGroups((draft) => {
+      setGroups((draft) => {
         const createdAt = getFormatedDate();
         const group = draft.find((group) => group.id === id);
-        group.notes.push({
+        group.notes.unshift({
           id: Date.now().toString(36),
           createdAt,
           text: note,
         });
       });
     },
-    [setNotesGroups]
+    [setGroups]
   );
 
-  const noteProviderValues = useMemo(
-    () => ({ notesGroups, getGroups, getGroup, addGroup, addNote }),
-    [notesGroups, getGroups, getGroup, addGroup, addNote]
+  const notesProviderValues = useMemo(
+    () => ({ groups, getPartialGroups, getGroup, addGroup, addNote }),
+    [groups, getPartialGroups, getGroup, addGroup, addNote]
   );
 
   return (
-    <NotesContext.Provider value={noteProviderValues}>
+    <NotesContext.Provider value={notesProviderValues}>
       {children}
     </NotesContext.Provider>
   );

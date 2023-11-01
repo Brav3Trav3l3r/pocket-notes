@@ -31,18 +31,20 @@ export default function TextBox() {
 
   return (
     <div className={styles.textBox}>
-      <form onSubmit={handleNoteSubmit} className={styles.form}>
-        <textarea
-          onKeyDown={handleKeyDown}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter your text here..."
-          className={styles.textarea}
-        ></textarea>
-        <button type="submit" className={styles.sendIcon}>
-          <Icon icon="fluent:send-16-filled" width={24} />
-        </button>
-      </form>
+      <div className={styles.wrapper}>
+        <form onSubmit={handleNoteSubmit} className={styles.form}>
+          <textarea
+            onKeyDown={handleKeyDown}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Enter your text here..."
+            className={styles.textarea}
+          ></textarea>
+          <button type="submit" className={styles.sendIcon}>
+            <Icon icon="fluent:send-16-filled" width={24} />
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

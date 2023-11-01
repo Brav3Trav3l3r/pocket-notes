@@ -7,7 +7,7 @@
   gap: 2rem;
 }
 
-.onClose {
+.hideElem {
   display: none;
 }
 
@@ -16,7 +16,7 @@
     min-width: 35%;
   }
 
-  .onClose {
+  .hideElem {
     display: flex;
   }
 }

@@ -13,7 +13,13 @@
   gap: 1.5rem;
 }
 
-/* ---MEDIA QUERIES--- */
+.metadata {
+  text-wrap: nowrap;
+}
+
+.metadata span {
+  display: block;
+}
 
 @media screen and (min-width: 1280px) {
   .notes {

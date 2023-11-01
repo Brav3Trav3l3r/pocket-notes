@@ -18,5 +18,5 @@
 
 .button:hover {
   color: #000;
-  background: rgb(255, 218, 87);
+  background: var(--accent);
 }

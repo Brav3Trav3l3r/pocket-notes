@@ -1,16 +1,25 @@
 .textBox {
-  background-color: var(--neutral-color);
-  padding: 1rem;
+  background-color: var(--secondary);
   height: 20vh;
+  position: relative;
+}
+
+.wrapper {
+  background-color: var(--neutral);
+  padding: 1rem;
+  height: 100%;
 }
 
 .form {
-  background-color: var(--secondary-color);
-  padding: 0.5rem;
+  border: 2px solid var(--secondary-border);
   height: 100%;
+  padding: 0.5rem;
+  background-color: var(--secondary);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
 .textarea {
@@ -23,15 +32,27 @@
   line-height: 1rem;
   margin-left: auto;
   transform: all 0.5s ease-in-out;
-  color: var(--neutral-content);
+  color: var(--icon);
 }
 
 .sendIcon:hover {
-  color: rgb(28, 124, 249);
+  color: var(--info);
 }
 
 @media screen and (min-width: 768px) {
   .textBox {
+    height: 25vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .textBox {
     height: 30vh;
+  }
+
+  .wrapper {
+    padding: 1rem 1.5rem;
+    height: 90%;
+    border-bottom-left-radius: 1rem;
   }
 }

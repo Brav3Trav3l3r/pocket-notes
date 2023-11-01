@@ -5,7 +5,7 @@ export default function Text({
   step = 3,
   weight = "400",
   color = "inherit",
-  inLineStyles,
+  style,
 }) {
   let stepStyle;
 
@@ -44,7 +44,7 @@ export default function Text({
       style={{
         fontWeight: weight,
         color: color,
-        ...inLineStyles,
+        ...style,
       }}
       className={`${stepStyle} ${styles.text}`}
     >

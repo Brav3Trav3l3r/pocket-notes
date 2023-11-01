@@ -1,21 +1,22 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navigation from "../components/Navigation";
 import styles from "./styles/RootLayout.module.css";
+
+import Navigation from "../components/Navigation";
 
 export default function RootLayout() {
   const location = useLocation();
-  let isHomePage;
+  let isRootRoute;
 
   if (location.pathname == "/") {
-    isHomePage = true;
+    isRootRoute = true;
   }
 
-  let displayNotes = !isHomePage ? styles.showNotes : "";
+  let hideOutletStyles = isRootRoute ? styles.hideElem : "";
 
   return (
     <div className={styles.container}>
-      <Navigation isHomePage={isHomePage} />
-      <main className={`${styles.main} ${displayNotes}`}>
+      <Navigation isRootRoute={isRootRoute} />
+      <main className={`${styles.main} ${hideOutletStyles}`}>
         <Outlet />
       </main>
     </div>

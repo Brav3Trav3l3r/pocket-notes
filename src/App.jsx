@@ -17,11 +17,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
-      <NotesContextProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </NotesContextProvider>
-    </>
+    <NotesContextProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </NotesContextProvider>
   );
 }
 

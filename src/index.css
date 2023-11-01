@@ -3,16 +3,22 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --base-color: #f7ecdc;
-  --secondary-color: #ffffff;
-  --border-color: #cccccc;
-  --primary-color: #000000;
-  --neutral-color: #e8e8e8;
-  --neutral-content: #ababab;
+  --primary: #f7ecdc;
+  --secondary: #ffffff;
+  --neutral: #e8e8e8;
+  --accent: #ffda57;
+  --info: #ff7b1d;
+
+  --primary-text: #000000;
+  --secondary-text: #292929;
+
+  --secondary-border: #cccccc;
+  --placeholder: #9a9a9a;
+  --icon: #ababab;
 
   color-scheme: light dark;
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  color: var(--primary-text);
+  background-color: var(--secondary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -48,10 +54,11 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--primary-text);
 }
 
-textarea, input {
+textarea,
+input {
   font-family: inherit;
   border: none;
   overflow: auto;
@@ -59,13 +66,17 @@ textarea, input {
   background-color: transparent;
   width: 100%;
   font-size: 1rem;
-  color: var(--primary-color);
+  color: var(--primary-text);
 
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 
   resize: none;
+}
+
+textarea::placeholder {
+  color: var(--placeholder);
 }
 
 button,
@@ -78,4 +89,19 @@ input[type="reset"] {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+/* This will remove blue hightlight on click on mobile devices */
+/* source: https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.noSelect:focus {
+  outline: none !important;
 }

@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--neutral-color);
+  background-color: var(--neutral);
 }
 
 .navigateIcon {
@@ -15,7 +15,7 @@
 }
 
 .navigateIcon:hover {
-  color: rgb(28, 124, 249);
+  color: var(--info);
 }
 
 .title {
