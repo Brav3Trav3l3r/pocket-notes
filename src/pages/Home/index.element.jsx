@@ -1,8 +1,8 @@
-import styles from "./styles/index.module.css";
 import heroImage from "../../assets/homeImage.png";
+import styles from "./styles/index.module.css";
 
+import { LockKeyhole } from "lucide-react";
 import { Text } from "../../components/ui";
-import { Icon } from "@iconify/react";
 
 export default function HomePage() {
   return (
@@ -21,9 +21,7 @@ export default function HomePage() {
       </div>
 
       <div className={styles.endText}>
-        <span>
-          <Icon icon="material-symbols:lock" />
-        </span>
+        <LockKeyhole size={14} />
         <Text>end-to-end encrypted</Text>
       </div>
     </div>

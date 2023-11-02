@@ -13,7 +13,7 @@ export default function Notes({ group }) {
                 {n.createdAt.time} <span>{n.createdAt.date}</span>
               </Text>
             </div>
-            <Text>{n.text}</Text>
+            <Text style={{ whiteSpace: "pre-line" }}>{n.text}</Text>
           </div>
         ))}
     </div>

@@ -49,7 +49,6 @@
 .colors {
   display: flex;
   justify-content: space-between;
-  /* gap: 0.325rem; */
   composes: noSelect from global;
 }
 

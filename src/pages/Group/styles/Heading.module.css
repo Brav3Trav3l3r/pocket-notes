@@ -11,6 +11,7 @@
   padding: 0.5rem;
   font-size: 1.3rem;
   cursor: pointer;
+  color: var(--icon);
 }
 
 .navigateIcon:hover {

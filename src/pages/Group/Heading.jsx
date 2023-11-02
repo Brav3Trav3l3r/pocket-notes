@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
+import { ArrowLeft } from "lucide-react";
 import styles from "./styles/Heading.module.css";
 
 import { Avatar, Text } from "../../components/ui";
@@ -8,7 +8,7 @@ export default function Heading({ group }) {
   return (
     <div className={styles.heading}>
       <Link to=".." className={styles.navigateIcon}>
-        <Icon icon="lucide:arrow-left" />
+        <ArrowLeft />
       </Link>
       <div className={styles.title}>
         <Avatar color={group.color}>

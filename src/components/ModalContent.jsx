@@ -39,7 +39,7 @@ export default function ModalContent({ handleModalOpen }) {
       <div className={styles.inputGroup}>
         <label htmlFor="group">
           <Text step={4} weight="500">
-            Group name
+            Group name&nbsp;
           </Text>
         </label>
         <input

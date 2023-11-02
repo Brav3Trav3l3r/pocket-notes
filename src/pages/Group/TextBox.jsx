@@ -1,14 +1,13 @@
 import { useCallback, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Icon } from "@iconify/react";
+import { SendHorizonal } from "lucide-react";
 import styles from "./styles/TextBox.module.css";
 
 import { NotesContext } from "../../store/notesContext";
 
 export default function TextBox() {
   const [input, setInput] = useState("");
-  const params = useParams();
-  const { id } = params;
+  const { id } = useParams();
   const noteCtx = useContext(NotesContext);
 
   const handleNoteSubmit = useCallback(
@@ -24,7 +23,7 @@ export default function TextBox() {
   );
 
   const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && !event.shiftKey) {
       handleNoteSubmit(event);
     }
   };
@@ -32,17 +31,16 @@ export default function TextBox() {
   return (
     <div className={styles.textBox}>
       <div className={styles.wrapper}>
-        <form onSubmit={handleNoteSubmit} className={styles.form}>
+        <form onSubmit={handleNoteSubmit}>
           <textarea
             autoFocus
             onKeyDown={handleKeyDown}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Enter your text here..."
-            className={styles.textarea}
           ></textarea>
-          <button type="submit" className={styles.sendIcon}>
-            <Icon icon="fluent:send-16-filled" width={24} />
+          <button type="submit">
+            <SendHorizonal/>
           </button>
         </form>
       </div>

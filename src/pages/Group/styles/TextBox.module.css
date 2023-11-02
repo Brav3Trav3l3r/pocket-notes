@@ -1,6 +1,6 @@
 .textBox {
   background-color: var(--secondary);
-  height: 20vh;
+  height: 20%;
   position: relative;
 }
 
@@ -10,7 +10,7 @@
   height: 100%;
 }
 
-.form {
+.wrapper form {
   border: 2px solid var(--secondary-border);
   height: 100%;
   padding: 0.5rem;
@@ -22,11 +22,12 @@
   z-index: 10;
 }
 
-.textarea {
+.wrapper textarea {
   flex: 1;
+  font-size: 1rem;
 }
 
-.sendIcon {
+.wrapper button {
   margin-top: 0.5rem;
   display: block;
   line-height: 1rem;
@@ -35,7 +36,7 @@
   color: var(--icon);
 }
 
-.sendIcon:hover {
+.wrapper button:hover {
   color: var(--info);
 }
 

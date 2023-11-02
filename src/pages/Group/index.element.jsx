@@ -9,8 +9,7 @@ import { NotesContext } from "../../store/notesContext";
 
 export default function Groups() {
   const noteCtx = useContext(NotesContext);
-  const params = useParams();
-  const { id } = params;
+  const { id } = useParams();
   const group = noteCtx.getGroup(id);
 
   return (

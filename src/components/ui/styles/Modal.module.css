@@ -22,9 +22,15 @@
   position: relative;
   z-index: 10;
   width: 95%;
-  max-width: fit-content;
+  max-width: 400px;
   animation: scaleIn 200ms ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    max-width: fit-content;
+  }
 }
 
 @keyframes fadeIn {
