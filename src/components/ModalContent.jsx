@@ -22,7 +22,7 @@ export default function ModalContent({ handleModalOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!inputName || !selectedColor) {
+    if (!inputName) {
       return;
     }
 
