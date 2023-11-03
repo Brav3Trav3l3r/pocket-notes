@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
-import styles from "./styles/ModalContent.module.css";
+import { Check } from "lucide-react";
 
-import { NotesContext } from "../store/notesContext";
 import { Button, Text } from "./ui";
+import { NotesContext } from "../store/notesContext";
+import styles from "./styles/ModalContent.module.css";
 
 export default function ModalContent({ handleModalOpen }) {
   const [inputName, setInputName] = useState("");
@@ -33,9 +34,9 @@ export default function ModalContent({ handleModalOpen }) {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <Text step={6} weight="500">
-        Create new notes group
-        <span className={styles.kbdEsc}>Esc</span>
+        Create new notes group <span className={styles.kbdEsc}>Esc</span>
       </Text>
+
       <div className={styles.inputGroup}>
         <label htmlFor="group">
           <Text step={4} weight="500">
@@ -51,6 +52,7 @@ export default function ModalContent({ handleModalOpen }) {
           placeholder="Enter your group name"
         />
       </div>
+
       <div className={styles.radioGroup}>
         <Text step={4} weight="500">
           Choose color
@@ -67,12 +69,20 @@ export default function ModalContent({ handleModalOpen }) {
                 name="color"
               />
               <label htmlFor={c.id}>
-                <span style={{ backgroundColor: c.color }}></span>
+                <span
+                  style={{
+                    backgroundColor: c.color,
+                    outlineColor: c.color + "70",
+                  }}
+                >
+                  <Check color="white" size={32} />
+                </span>
               </label>
             </div>
           ))}
         </div>
       </div>
+      
       <div className={styles.submitButton}>
         <Button>Create</Button>
       </div>

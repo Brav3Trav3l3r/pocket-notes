@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import styles from "./styles/RootLayout.module.css";
 
 import Navigation from "../components/Navigation";
+import styles from "./styles/RootLayout.module.css";
 
 export default function RootLayout() {
   const location = useLocation();

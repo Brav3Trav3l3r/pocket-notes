@@ -63,7 +63,6 @@
 }
 
 .radio span {
-  display: inline-block;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -73,10 +72,23 @@
   line-height: 44px;
   position: relative;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 100ms ease-in-out;
 }
 
-.radio input:checked + label span {
-  border: 2px solid black;
+.radio input + label span svg {
+  display: none;
+}
+
+.radio input:checked + label span svg {
+  display: block;
+}
+
+.radio input:focus + label span {
+  outline: 4px solid;
+  outline-offset: 1px;
 }
 
 @media screen and (min-width: 768px) {

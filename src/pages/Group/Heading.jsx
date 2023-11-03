@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import styles from "./styles/Heading.module.css";
 
 import { Avatar, Text } from "../../components/ui";
+import styles from "./styles/Heading.module.css";
 
 export default function Heading({ group }) {
   return (

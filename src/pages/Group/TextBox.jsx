@@ -1,9 +1,9 @@
 import { useCallback, useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { SendHorizonal } from "lucide-react";
-import styles from "./styles/TextBox.module.css";
 
 import { NotesContext } from "../../store/notesContext";
+import styles from "./styles/TextBox.module.css";
 
 export default function TextBox() {
   const [input, setInput] = useState("");
@@ -37,10 +37,12 @@ export default function TextBox() {
             onKeyDown={handleKeyDown}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter your text here..."
+            placeholder={
+              `Enter your text here...\nTip: Shift + Enter to create a new line.`
+            }
           ></textarea>
           <button type="submit">
-            <SendHorizonal/>
+            <SendHorizonal />
           </button>
         </form>
       </div>

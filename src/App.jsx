@@ -4,13 +4,13 @@ import RootLayout from "./pages/RootLayout";
 import HomePage from "./pages/Home/index.element";
 import Groups from "./pages/Group/index.element";
 import { NotesContextProvider } from "./store/notesContext";
-import Error from "./pages/Error";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <Error />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "groups/:id", element: <Groups /> },

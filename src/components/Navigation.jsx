@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
-import styles from "./styles/Navigation.module.css";
 
 import ModalContent from "./ModalContent";
 import NoteGroups from "./NoteGroups";
 import { Button, Modal, Text } from "./ui";
+import styles from "./styles/Navigation.module.css";
 
 export default function Navigation({ isRootRoute }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,7 +45,11 @@ export default function Navigation({ isRootRoute }) {
         <Button onClick={handleModalOpen}>
           <div className={styles.buttonContent}>
             <div>
-              <Plus strokeWidth={3} size={18} />
+              <Plus
+                strokeWidth={3}
+                size={16}
+                style={{ transform: "translateY(1px)" }}
+              />
               Create notes group
             </div>
             <span>Ctrl k</span>

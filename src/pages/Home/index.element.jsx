@@ -1,8 +1,8 @@
-import heroImage from "../../assets/homeImage.png";
-import styles from "./styles/index.module.css";
-
 import { LockKeyhole } from "lucide-react";
+
+import heroImage from "../../assets/homeImage.png";
 import { Text } from "../../components/ui";
+import styles from "./styles/index.module.css";
 
 export default function HomePage() {
   return (

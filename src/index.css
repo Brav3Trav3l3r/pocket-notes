@@ -60,6 +60,8 @@ a {
 textarea,
 input {
   font-family: inherit;
+  letter-spacing: 0em;
+  line-height: 24px;
   border: none;
   overflow: auto;
   outline: none;
@@ -105,4 +107,3 @@ input[type="reset"] {
 .noSelect:focus {
   outline: none !important;
 }
-
