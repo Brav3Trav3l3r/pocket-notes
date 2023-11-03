@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { NotesContext } from "../../store/notesContext";
 import Heading from "./Heading";
@@ -12,9 +12,17 @@ export default function Groups() {
   const { id } = useParams();
   const group = noteCtx.getGroup(id);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!group) {
+      navigate("/");
+    }
+  }, [group]);
+
   return (
     <div className={styles.container}>
-      <Heading group={group} />
+      {group && <Heading group={group} />}
       <Notes group={group} />
       <TextBox />
     </div>
