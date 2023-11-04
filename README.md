@@ -1,8 +1,52 @@
-# React + Vite
+# Pocket notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+"Pocket Notes" is a user-friendly note-taking application that lets you create custom groups to categorize your notes. Within these groups, you can easily create and store notes for efficient organization. The project leverages local storage to securely save and retrieve data, ensuring your notes are always at your fingertips for a seamless note-taking experience.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://pocket-notes-nine.vercel.app/
+
+## Screenshots
+
+Desktop
+
+![HomePage](./public/home.png)
+![Notes section](./public/notes.png)
+![Modal](./public/modal.png)
+
+Small screen
+
+![Mobile](./public/mobile.png)
+
+## Built with
+
+- React
+- React router dom v6
+- Vite
+- Valnilla css
+
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/Brav3Trav3l3r/pocket-notes
+```
+
+Go to the project directory
+
+```bash
+cd pocket-notes
+```
+
+Install dependencies
+
+```bash
+npm i
+```
+
+Start the server
+
+```bash
+npm run dev
+```

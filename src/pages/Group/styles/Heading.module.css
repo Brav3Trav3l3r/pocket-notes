@@ -24,8 +24,27 @@
   gap: 1rem;
 }
 
+.title p {
+  max-width: 18ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 768px) {
   .navigateIcon {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navigateIcon {
+    display: none;
+  }
+
+  .title p {
+    max-width: 45ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

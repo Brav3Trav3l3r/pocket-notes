@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Avatar, Text } from "../../components/ui";
 import styles from "./styles/Heading.module.css";
 
-export default function Heading({ group }) {
+export default function Navbar({ group }) {
   return (
     <div className={styles.heading}>
       <Link to=".." className={styles.navigateIcon}>

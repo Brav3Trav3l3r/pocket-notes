@@ -5,7 +5,7 @@ import { Button, Text } from "./ui";
 import { NotesContext } from "../store/notesContext";
 import styles from "./styles/ModalContent.module.css";
 
-export default function ModalContent({ handleModalOpen }) {
+export default function ModalContent({ toggleModal }) {
   const [inputName, setInputName] = useState("");
 
   const colorArr = [
@@ -27,7 +27,7 @@ export default function ModalContent({ handleModalOpen }) {
       return;
     }
 
-    handleModalOpen();
+    toggleModal();
     notesCtx.addGroup(inputName, selectedColor.color);
   };
 
@@ -39,8 +39,12 @@ export default function ModalContent({ handleModalOpen }) {
 
       <div className={styles.inputGroup}>
         <label htmlFor="group">
-          <Text step={4} weight="500">
-            Group name&nbsp;
+          <Text
+            step={4}
+            weight="500"
+            style={{ color: "var(--secondary-text)" }}
+          >
+            Group name&nbsp;&nbsp;
           </Text>
         </label>
         <input
@@ -54,7 +58,7 @@ export default function ModalContent({ handleModalOpen }) {
       </div>
 
       <div className={styles.radioGroup}>
-        <Text step={4} weight="500">
+        <Text step={4} weight="500" style={{ color: "var(--secondary-text)" }}>
           Choose color
         </Text>
         <div className={styles.colors}>
@@ -82,7 +86,7 @@ export default function ModalContent({ handleModalOpen }) {
           ))}
         </div>
       </div>
-      
+
       <div className={styles.submitButton}>
         <Button>Create</Button>
       </div>

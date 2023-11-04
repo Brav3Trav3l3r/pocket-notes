@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { NotesContext } from "../../store/notesContext";
-import Heading from "./Heading";
+import Navbar from "./Navbar";
 import Notes from "./Notes";
 import TextBox from "./TextBox";
 import styles from "./styles/index.module.css";
@@ -18,13 +18,17 @@ export default function Groups() {
     if (!group) {
       navigate("/");
     }
-  }, [group]);
+  }, [group, navigate]);
 
   return (
-    <div className={styles.container}>
-      {group && <Heading group={group} />}
-      <Notes group={group} />
-      <TextBox />
-    </div>
+    <>
+      {group && (
+        <div className={styles.container}>
+          <Navbar group={group} />
+          <Notes group={group} />
+          <TextBox />
+        </div>
+      )}
+    </>
   );
 }

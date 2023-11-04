@@ -11,11 +11,9 @@ import styles from "./styles/Navigation.module.css";
 export default function Navigation({ isRootRoute }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModalOpen = () => {
+  const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
   };
-
-  let navDisplayStyles = !isRootRoute ? styles.hideElem : "";
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -34,22 +32,20 @@ export default function Navigation({ isRootRoute }) {
     };
   });
 
+  let hiddenNavStyles = !isRootRoute ? styles.hideElem : "";
+
   return (
     <>
-      <nav className={`${styles.nav} ${navDisplayStyles}`}>
+      <nav className={`${styles.nav} ${hiddenNavStyles}`}>
         <Link className={styles.title} to={"/"}>
           <Text step={6} weight="600">
             Pocket notes
           </Text>
         </Link>
-        <Button onClick={handleModalOpen}>
+        <Button onClick={toggleModal}>
           <div className={styles.buttonContent}>
             <div>
-              <Plus
-                strokeWidth={3}
-                size={16}
-                style={{ transform: "translateY(1px)" }}
-              />
+              <Plus strokeWidth={3} size={16} />
               Create notes group
             </div>
             <span>Ctrl k</span>
@@ -59,8 +55,8 @@ export default function Navigation({ isRootRoute }) {
       </nav>
       {isModalOpen &&
         createPortal(
-          <Modal onClick={handleModalOpen}>
-            <ModalContent handleModalOpen={handleModalOpen} />
+          <Modal onClick={toggleModal}>
+            <ModalContent toggleModal={toggleModal} />
           </Modal>,
           document.getElementById("modal")
         )}

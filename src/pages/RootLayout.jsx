@@ -11,12 +11,12 @@ export default function RootLayout() {
     isRootRoute = true;
   }
 
-  let hideOutletStyles = isRootRoute ? styles.hideElem : "";
+  let hiddenOutletStyles = isRootRoute ? styles.hideElem : "";
 
   return (
     <div className={styles.container}>
       <Navigation isRootRoute={isRootRoute} />
-      <main className={`${styles.main} ${hideOutletStyles}`}>
+      <main className={`${styles.main} ${hiddenOutletStyles}`}>
         <Outlet />
       </main>
     </div>
