@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Check } from "lucide-react";
 
 import { Button, Text } from "./ui";
@@ -7,6 +7,13 @@ import styles from "./styles/ModalContent.module.css";
 
 export default function ModalContent({ toggleModal }) {
   const [inputName, setInputName] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    if (isError && inputName.trim().length > 0) {
+      setIsError(false);
+    }
+  }, [inputName, isError]);
 
   const colorArr = [
     { id: 1, color: "#B38BFA" },
@@ -23,13 +30,17 @@ export default function ModalContent({ toggleModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!inputName) {
+    if (!inputName.trim()) {
+      setIsError(true);
+
       return;
     }
 
     toggleModal();
     notesCtx.addGroup(inputName, selectedColor.color);
   };
+
+  const errorInputStyles = isError ? styles.errorInput : "";
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -48,6 +59,7 @@ export default function ModalContent({ toggleModal }) {
           </Text>
         </label>
         <input
+          className={errorInputStyles}
           autoFocus
           value={inputName}
           onChange={(e) => setInputName(e.target.value)}
